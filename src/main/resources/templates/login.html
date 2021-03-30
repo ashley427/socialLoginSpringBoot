@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>로그인</h2><br><br>
+
+    <!--<a href="javascript:" class="btn_social" data-social="facebook">페이스북 로그인</a><br>-->
+    <!--<a href="javascript:" class="btn_social" data-social="google">구글 로그인</a><br>-->
+    <a href="javascript:" class="btn_social" data-social="kakao" onclick="trylogin(this)">카카오 로그인</a><br>
+    <!--<a href="javascript:" class="btn_social" data-social="naver">네이버 로그인</a><br>-->
+
+    <script>
+        // let socials = document.getElementsByClassName("btn_social");
+
+        const trylogin = (obj) => {
+            const socialType = obj.dataset.social;
+            location.href="/oauth2/authorization/"+ socialType;
+        }
+
+
+
+        // for(let social of socials) {
+        //     social.addEventListener('click', () =>{
+        //         // let socialType = this.getAttribute('data-social');
+        //         const socialType = this.dataset.social;
+        //         console.log(socialType)
+        //         // location.href="/oauth2/authorization/"+ socialType;
+        //     })
+        // }
+
+    </script>
+</body>
+</html>
